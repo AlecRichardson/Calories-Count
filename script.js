@@ -30,6 +30,9 @@ function evaluatePath(path) {
     case "login":
       $.get("./Components/Auth/loginForm.php", stageContent);
       break;
+    case "register":
+      $.get("./Components/Auth/createUserForm.php", stageContent);
+      break;
     case "dashboard":
       $.get("./Components/CalorieLog/calorieLog.php", stageContent);
       break;

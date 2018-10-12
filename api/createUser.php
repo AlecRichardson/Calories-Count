@@ -1,27 +1,14 @@
 <?php
-//alec
 
-    // HTTPS redirect
-//    if ($_SERVER['HTTPS'] !== 'on') {
-//		$redirectURL = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-//		header("Location: $redirectURL");
-//		exit;
-//	}
-	
-	// http://us3.php.net/manual/en/function.session-start.php
 	if(!session_start()) {
-		// If the session couldn't start, present an error
 		header("Location: ../error.php");
 		exit;
 	}
 	
-	
-	// Check to see if the user has already logged in
 	$loggedIn = empty($_SESSION['loggedin']) ? false : $_SESSION['loggedin'];
 	
 	if ($loggedIn) {
-		header("Location: ../Login/loginForm.php");
-		exit;
+		echo 'redirect';
 	}
 	
 	
@@ -42,20 +29,19 @@
         $birthday = empty($_POST['birthday']) ? '' : $_POST['birthday'];
         $email = empty($_POST['email']) ? '' : $_POST['email'];
         
-        
+        if($firstName == '' || $lastName == '' || $username == '' || $password == '' || $confirmPass == '' || $birthday == '' || $email == ''){
+            echo 'All fields are required';
+        }
         
         if(strcmp($password, $confirmPass) == 0){
-           // Require the credentials
-            require_once '../conf/db.conf';
 
-            // Connect to the database
+            require_once '../config/db.conf';
+
             $mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 
-            // Check for errors
             if ($mysqli->connect_error) {
                 $error = 'Error: ' . $mysqli->connect_errno . ' ' . $mysqli->connect_error;
-                require "../Login/loginForm.php";
-                exit;
+                echo 'redirect';
             }
 
            
@@ -75,8 +61,7 @@
             $result = $mysqli->query($query);
             
             if($result->num_rows>0){
-                $error = "Error: Username is already taken.";
-                require "createUserForm.php";
+                echo 'Username is already taken.';
             }
             
             
@@ -88,25 +73,19 @@
             if ($mysqli->query($query) === TRUE) {
                 $mysqli->close();
 
-                    $error = "New user created successfully!";
-                    require "../Login/loginForm.php";
-                    exit;
+                    echo 'success';
                 }
             } 
      
         else {
-          $error = 'Error: Passwords do not match!';
-          require "createUserForm.php";
-          exit;
+          echo 'Passwords do not match!';
         }
     
 	}
 
 	function login_form() {
 		$username = "";
-		$error = "";
-		require "../Login/loginForm.php";
-        exit;
+		echo 'redirect';
 	}
 	
 ?>

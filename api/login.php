@@ -1,7 +1,7 @@
 <?php
 
 if(!session_start()){
-    header("Location: ./Components/Error/error.php");
+    header("Location: ../error.php");
     exit;
     }
 
@@ -54,13 +54,11 @@ function handle_login() {
                                 
                 $_SESSION['id'] = $row['id'];
                 
-                exit; 
-                echo "Welcome ". $_SESSION['loggedin'];
+                echo 'success';
                
             }
             else {
-                $error = "Error: Incorrect username or password";
-                echo $error;
+                echo "Incorrect username or password";
 
             }
             $result->close();
@@ -71,7 +69,6 @@ function handle_login() {
 
 function login_form() {
 		$username = "";
-        $error = "";
         echo 'redirect';
        
 	}

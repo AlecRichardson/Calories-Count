@@ -29,21 +29,27 @@ $(".delete-meal-button").click(function() {
         });
         
       });
-      
-$(".delete-meal-button").click(function() {
-        $.post("./api/deleteLog.php", $("#delete-meal-form").serialize(), function(data) {
-            history.pushState(null, null, "dashboard");
-            evaluatePath("dashboard");
-        });
-        
-      });
+
 
 $(".edit-meal-button").click(function() {
-    console.log($(".edit-meal-form").serialize());
-        $.post("./api/setSession.php", $(".edit-meal-form").serialize(), function(data){
-            history.pushState(null, null, "edit-meal");
-            evaluatePath("edit-meal");
-        })
+    var id = {id:$(this).attr('id')};
+    console.log("edit button id", id);
+    // console.log(JSON.parse(JSON.stringify($(".edit-meal-form").serialize())));
+    // var data = JSON.parse(JSON.stringify($(".edit-meal-form").serializeArray()));
+    // console.log('JSON', data);
+    // console.log($(".edit-meal-form").serialize());
+    // var json = [{}];
+    // for(var i=0; i<data.length; i++){
+    //     for(var j=0; j<6; j++){
+    //         json[i].
+    //     console.log(data[i]);
+    //     }
+    // }
+        // $.post("./api/setSession.php", id, function(data){
+        //     console.log(data);
+        //     history.pushState(null, null, "edit-meal");
+        //     evaluatePath("edit-meal");
+        // })
       });
 
 
@@ -104,7 +110,7 @@ $(".edit-meal-button").click(function() {
                                     <input type='hidden' name='dinner' value=<?php echo $row['dinner']; ?>>
                                     <input type='hidden' name='other' value=<?php echo $row['other']; ?>>
                                     <button type="button" 
-                                    class="btn btn-primary edit-meal-button">Edit</button>
+                                    class="btn btn-primary edit-meal-button" id='<?php echo $row['id']; ?>'>Edit</button>
                                 </form>
                             </td>
                             <td scope="row">

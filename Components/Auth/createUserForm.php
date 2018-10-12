@@ -1,11 +1,21 @@
+<script>
+    $("#register-button").click(function() {
+    $('#error').html('');
+        $.post("./api/createUser.php", $("#register-form").serialize(), function(data) {
+            if(data === 'success'){
+            history.pushState(null, null, "login");
+            evaluatePath("login");
+            } else{
+                $('#error').html(data);
+            }
+        });
+      });
+</script>
 <div class='register-form container text-center' style="width: 50%;">
           
                 <h1>Register</h1>
 
-                <?php if($error){ ?>
-                <div><?php $error ?></div> <?php } ?>
-
-                <form action='./api/createUser.php' method='POST'>
+                <form id='register-form'>
                     <input type='hidden' name='action' value='do_create'>
 
                     <div class="input-group mb-3">
@@ -56,8 +66,10 @@
                         </div>
                         <input type="email" class="form-control" placeholder="Email" name='email'>
                     </div>
+
+                    <div id='error' style='margin:15px; color: red;'></div>
                     
-                    <button type="submit" class="btn btn-success">Register</button>
+                    <button type="button" class="btn btn-success" id='register-button'>Register</button>
                 </form>
         </div>
  
