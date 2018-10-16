@@ -5,15 +5,6 @@ if(!session_start()){
 }
 
 $loggedin = empty($_SESSION['loggedin']) ? '' : $_SESSION['loggedin'];
-
-if (!$loggedin) {
-    ?>
-        <script>
-            history.pushState(null, null, "login");
-            evaluatePath("login");
-        </script>
-    <?php
-}
 ?>
 
 <script>
@@ -21,7 +12,6 @@ $("#enter-meal-button").click(function() {
             history.pushState(null, null, "enter-meal");
             evaluatePath("enter-meal");
       });
-
 $(".delete-meal-button").click(function() {
     var id = {id:$(this).attr('id')};
         $.post("./api/deleteLog.php", id, function(data) {
@@ -30,8 +20,6 @@ $(".delete-meal-button").click(function() {
         });
         
       });
-
-
 $(".edit-meal-button").click(function() {
     var id = {id:$(this).attr('id')};
         $.post("./api/setSession.php", id, function(data){
@@ -39,9 +27,6 @@ $(".edit-meal-button").click(function() {
             evaluatePath("edit-meal");
         })
       });
-
-
-
 </script>
 
 <div class='calorie-log container text-center' style="width: 70%;">

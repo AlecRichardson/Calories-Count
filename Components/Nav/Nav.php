@@ -9,16 +9,16 @@ $loggedin = empty($_SESSION['loggedin']) ? '' : $_SESSION['loggedin'];
 
 ?>
 
-<style>
+<!-- <style>
 <?php include 'Nav.css'; ?>
-</style>
+</style> -->
 
 <div class="navbar navbar-dark bg-dark ">
           <a class="navbar-brand" href="/home">
             <h1>Calories Count</h1>
           </a>
           <ul class="nav nav-pills">
-            <li class="nav-item active">
+            <li class="nav-item">
               <a
                 class='nav-link active async-link'
                 href='./'

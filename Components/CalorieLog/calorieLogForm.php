@@ -1,23 +1,21 @@
 
 <?php
 	if(!session_start()){
-        header("Location: ./Components/Error/error.php");
+        header("Location: ../../error.php");
         exit;
     }
 	$loggedin = empty($_SESSION['loggedin']) ? '' : $_SESSION['loggedin'];
 	
 	
-//     if (!$loggedin) { 
-//     ?>
-        <script>
-//             history.pushState(null, null, "login");
-//             $.get("./Components/Auth/loginForm.php", stageContent);
-//         </script>
-    <?php
-// 		exit;
-// 	} 
-
-// ?>
+    if (!$loggedin) {
+        ?>
+            <script>
+                history.pushState(null, null, "login");
+                evaluatePath("login");
+            </script>
+        <?php
+    }
+    ?>
 
 <script>
   $("#enter-meal-button").click(function() {
@@ -26,7 +24,10 @@
             evaluatePath("dashboard");
         });
       });
-
+      $("#enter-meal-back-button").click(function() {
+            history.pushState(null, null, "dashboard");
+            evaluatePath("dashboard");
+      });
       
 </script>
 
@@ -72,7 +73,7 @@
             </div>
 
              <button type="button" id='enter-meal-button' class="btn btn-primary">Submit</button>
-             <button type="button" class="btn btn-danger">Back</button>
+             <button type="button" id='enter-meal-back-button' class="btn btn-danger">Back</button>
          </form>
 
 </div>

@@ -1,14 +1,17 @@
 $(document).ready(function() {
   $(function() {
     evaluatePath(location.pathname);
-    // nav[role=navigation] a
+
     $(".async .async-link").click(function(e) {
       e.preventDefault();
 
-      var request = $(this).attr("href");
-      console.log("request", request);
-      history.pushState(null, null, request);
+      $(".async")
+        .find("a.active")
+        .removeClass("active");
+      $(this).addClass("active");
 
+      var request = $(this).attr("href");
+      history.pushState(null, null, request);
       evaluatePath(request);
     });
 
@@ -23,8 +26,6 @@ function stageContent(content) {
 
 function evaluatePath(path) {
   var request = path.split("/").pop();
-  console.log(location.pathname);
-  console.log(path);
 
   switch (request) {
     case "login":
@@ -34,7 +35,14 @@ function evaluatePath(path) {
       $.get("./Components/Auth/createUserForm.php", stageContent);
       break;
     case "dashboard":
-      $.get("./Components/CalorieLog/calorieLog.php", stageContent);
+      $.get("./api/authenticate.php", function(data) {
+        if (data === "success") {
+          $.get("./Components/CalorieLog/calorieLog.php", stageContent);
+        } else {
+          history.pushState(null, null, "login");
+          evaluatePath("login");
+        }
+      });
       break;
     case "enter-meal":
       $.get("./Components/CalorieLog/calorieLogForm.php", stageContent);
