@@ -56,7 +56,7 @@ function handle_log(){
         
     
     } else {
-        $echo "Updating the calorie log was unsuccessful";
+        echo "Updating the calorie log was unsuccessful";
     }
     
     $mysqli->close();

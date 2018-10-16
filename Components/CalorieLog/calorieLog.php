@@ -23,7 +23,8 @@ $("#enter-meal-button").click(function() {
       });
 
 $(".delete-meal-button").click(function() {
-        $.post("./api/deleteLog.php", $("#delete-meal-form").serialize(), function(data) {
+    var id = {id:$(this).attr('id')};
+        $.post("./api/deleteLog.php", id, function(data) {
             history.pushState(null, null, "dashboard");
             evaluatePath("dashboard");
         });
@@ -33,23 +34,10 @@ $(".delete-meal-button").click(function() {
 
 $(".edit-meal-button").click(function() {
     var id = {id:$(this).attr('id')};
-    console.log("edit button id", id);
-    // console.log(JSON.parse(JSON.stringify($(".edit-meal-form").serialize())));
-    // var data = JSON.parse(JSON.stringify($(".edit-meal-form").serializeArray()));
-    // console.log('JSON', data);
-    // console.log($(".edit-meal-form").serialize());
-    // var json = [{}];
-    // for(var i=0; i<data.length; i++){
-    //     for(var j=0; j<6; j++){
-    //         json[i].
-    //     console.log(data[i]);
-    //     }
-    // }
-        // $.post("./api/setSession.php", id, function(data){
-        //     console.log(data);
-        //     history.pushState(null, null, "edit-meal");
-        //     evaluatePath("edit-meal");
-        // })
+        $.post("./api/setSession.php", id, function(data){
+            history.pushState(null, null, "edit-meal");
+            evaluatePath("edit-meal");
+        })
       });
 
 
@@ -117,7 +105,7 @@ $(".edit-meal-button").click(function() {
                                 <form id='delete-meal-form'>
                                     <input type='hidden' name='id' value=<?php echo $row['id']; ?>>
                                     
-                                    <button type="button" class="btn btn-danger delete-meal-button">Delete</button>
+                                    <button type="button" class="btn btn-danger delete-meal-button" id='<?php echo $row['id']; ?>'>Delete</button>
                                 </form>
                             </td>
                         </tr>

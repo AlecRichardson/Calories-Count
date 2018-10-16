@@ -1,20 +1,43 @@
 <?php
 if(!session_start()){
-    header("Location: ./Error/error.php");
+    header("Location: ../../error.php");
     exit;
 }
 
-    $loggedin = empty($_SESSION['loggedin']) ? '' : $_SESSION['loggedin'];
-    $editid = empty($_SESSION['edit-id']) ? '' : $_SESSION['edit-id'];
-    $date = empty($_SESSION['date']) ? '' : $_SESSION['date'];
-    $breakfast = empty($_SESSION['breakfast']) ? '' : $_SESSION['breakfast'];
-    $lunch = empty($_SESSION['lunch']) ? '' : $_SESSION['lunch'];
-    $dinner = empty($_SESSION['dinner']) ? '' : $_SESSION['dinner'];
-    $other = empty($_SESSION['other']) ? '' : $_SESSION['other'];
+    // $loggedin = empty($_SESSION['loggedin']) ? '' : $_SESSION['loggedin'];
+    // $editid = empty($_SESSION['edit-id']) ? '' : $_SESSION['edit-id'];
+    // $date = empty($_SESSION['date']) ? '' : $_SESSION['date'];
+    // $breakfast = empty($_SESSION['breakfast']) ? '' : $_SESSION['breakfast'];
+    // $lunch = empty($_SESSION['lunch']) ? '' : $_SESSION['lunch'];
+    // $dinner = empty($_SESSION['dinner']) ? '' : $_SESSION['dinner'];
+    // $other = empty($_SESSION['other']) ? '' : $_SESSION['other'];
+
+    require_once "../../config/db.conf";
+    
+    $mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+    
+    if($mysqli->connect_error){
+        die('Connect Error (' . $mysqli->connect_errno . ')' . $mysqli->connect_error);
+    }
+
+    $id = empty($_SESSION['edit-id']) ? '99' : $_SESSION['edit-id'];
+
+    $query = "select * from calorielog where id='$id'";
+
+    if($result = $mysqli->query($query)){
+        while($row = $result->fetch_assoc()){
+            $date = $row['date'];
+            $breakfast = $row['breakfast'];
+            $lunch = $row['lunch'];
+            $dinner = $row['dinner'];
+            $other = $row['other'];
+        }
+    }
 
 ?>
     <script>
         $("#edit-meal-button-2").click(function() {
+            console.log('edit submit');
         $.post("./api/editInfo.php", $("#edit-meal-form-2").serialize(), function(data) {
             console.log('============editformdata========', data);
             history.pushState(null, null, "dashboard");
@@ -27,7 +50,7 @@ if(!session_start()){
             evaluatePath("dashboard");
       });
         </script>
-        <div><?php echo "entry id: ". $_SESSION['edit-id'] . "brealfast" .$_SESSION['breakfast']; ?></div>
+        
         <div class='edit-log-form container text-center'  style="width: 50%;">
         <h1>Edit entry</h1>
 
