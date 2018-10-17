@@ -8,7 +8,7 @@
 	$action = empty($_POST['action']) ? '' : $_POST['action'];
 	
 	if (!$loggedin) {
-		header("Location: ../Login/loginForm.php");
+		header("Location: ../error.php");
 		exit;
 	} 
 

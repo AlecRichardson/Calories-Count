@@ -5,13 +5,11 @@ if(!session_start()){
 }
 $loggedin = empty($_SESSION['loggedin']) ? '' : $_SESSION['loggedin'];
 
-
-
 ?>
 
-<!-- <style>
+<style>
 <?php include 'Nav.css'; ?>
-</style> -->
+</style>
 
 <div class="navbar navbar-dark bg-dark ">
           <a class="navbar-brand" href="/home">

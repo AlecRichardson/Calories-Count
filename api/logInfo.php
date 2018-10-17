@@ -10,7 +10,7 @@ $loggedin = empty($_SESSION['loggedin']) ? '' : $_SESSION['loggedin'];
 	
 	
 	if (!$loggedin) {
-		header("Location: ../Login/loginForm.php");
+		header("Location: ../error.php");
 		exit;
 	} 
 
@@ -24,8 +24,8 @@ if ($action == 'do_log') {
 function handle_log(){
     
     if(empty($_POST['date'])){
-        $error = 'Error: Please select a date';
-        echo $error;
+        echo 'Please select a date.';
+        exit;
     }
     $date = empty($_POST['date']) ? '' : $_POST['date'];
     $breakfast = empty($_POST['breakfast']) ? '0' : $_POST['breakfast'];
@@ -55,9 +55,9 @@ function handle_log(){
     
     if($mysqli->query($query)){
        
-        echo "Calorie log updated successfully!";    
+        echo "success";    
     } else {
-        echo "Updating the calorie log was unsuccessful";
+        echo "Error submitting entry, please contact the system administrator.";
     }
     $mysqli->close();
 }
