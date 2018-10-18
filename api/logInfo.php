@@ -50,7 +50,7 @@ function handle_log(){
     $dinner = $mysqli->real_escape_string($dinner);
     $other = $mysqli->real_escape_string($other);
   
-     $query =  "insert into calorielog (userId, date, breakfast, lunch, dinner, other) values ('12', '$date', '$breakfast', '$lunch', '$dinner', '$other')";
+     $query =  "insert into calorielog (userId, date, breakfast, lunch, dinner, other) values ('$id', '$date', '$breakfast', '$lunch', '$dinner', '$other')";
     
     
     if($mysqli->query($query)){
