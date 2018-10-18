@@ -32,7 +32,9 @@ $loggedin = empty($_SESSION['loggedin']) ? '' : $_SESSION['loggedin'];
     
     </div>
 
-  
+    <div class='async'>
+        <?php include("./Components/Footer/Footer.php") ?>
+    </div>
        
       
         <!-- Bootstrap -->
