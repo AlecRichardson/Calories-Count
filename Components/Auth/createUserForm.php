@@ -11,7 +11,7 @@
         });
       });
 </script>
-<div class='register-form container text-center' style="width: 50%;">
+<div class='register-form container text-center' style="width: 50%; margin-top: 100px;">
           
                 <h1>Register</h1>
 

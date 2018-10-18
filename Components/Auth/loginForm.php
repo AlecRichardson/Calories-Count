@@ -31,7 +31,7 @@ $loggedin = empty($_SESSION['loggedin']) ? '' : $_SESSION['loggedin'];
         
       });
 </script>
-<div class='login-form container text-center' style="width: 50%;">
+<div class='login-form container text-center' style="width: 50%; margin-top: 100px;">
 
             <?php if(!$loggedin){ ?>
                 <h1>Log in</h1>

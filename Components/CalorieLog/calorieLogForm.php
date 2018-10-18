@@ -41,7 +41,7 @@
       });
 </script>
 
-<div class='calorie-log-form container text-center'  style="width: 50%;">
+<div class='calorie-log-form container text-center'  style="width: 50%; margin-top: 100px;">
         <h1>Calorie Log</h1>
         <form id='enter-meal-form'>
             <input type='hidden' name='action' value='do_log'>  

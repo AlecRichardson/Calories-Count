@@ -28,9 +28,11 @@ $loggedin = empty($_SESSION['loggedin']) ? '' : $_SESSION['loggedin'];
         <?php include("./Components/Nav/Nav.php") ?>
     </nav>
     
-    <div id='content' class='async' style='margin-top: 100px;'>
+    <div id='content' class='async'>
     
     </div>
+
+  
        
       
         <!-- Bootstrap -->

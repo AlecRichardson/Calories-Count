@@ -51,6 +51,6 @@ function evaluatePath(path) {
       $.get("./Components/CalorieLog/editLogForm.php", stageContent);
       break;
     default:
-      $.get("./Components/Landing.php", stageContent);
+      $.get("./Components/Landing/Landing.php", stageContent);
   }
 }

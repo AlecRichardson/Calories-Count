@@ -29,7 +29,7 @@ $(".edit-meal-button").click(function() {
       });
 </script>
 
-<div class='calorie-log container text-center' style="width: 70%;">
+<div class='calorie-log container text-center' style="width: 70%; margin-top: 100px;">
            
     <h1 id="pageTitle">
         Calorie log for <?php echo $loggedin; ?>

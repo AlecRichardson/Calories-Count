@@ -6,12 +6,11 @@ if(!session_start()){
 $loggedin = empty($_SESSION['loggedin']) ? '' : $_SESSION['loggedin'];
 
 ?>
+<link href='./Components/Nav/Nav.css' rel='stylesheet' type='text/css
+'>
 
-<style>
-<?php include 'Nav.css'; ?>
-</style>
 
-<div class="navbar navbar-dark bg-dark ">
+<div class="navbar navbar-dark bg-dark">
           <a class="navbar-brand" href="/home">
             <h1>Calories Count</h1>
           </a>

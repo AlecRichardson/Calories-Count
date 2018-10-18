@@ -4,13 +4,6 @@ if(!session_start()){
     exit;
 }
 
-    // $loggedin = empty($_SESSION['loggedin']) ? '' : $_SESSION['loggedin'];
-    // $editid = empty($_SESSION['edit-id']) ? '' : $_SESSION['edit-id'];
-    // $date = empty($_SESSION['date']) ? '' : $_SESSION['date'];
-    // $breakfast = empty($_SESSION['breakfast']) ? '' : $_SESSION['breakfast'];
-    // $lunch = empty($_SESSION['lunch']) ? '' : $_SESSION['lunch'];
-    // $dinner = empty($_SESSION['dinner']) ? '' : $_SESSION['dinner'];
-    // $other = empty($_SESSION['other']) ? '' : $_SESSION['other'];
 
     require_once "../../config/db.conf";
     
@@ -51,7 +44,7 @@ if(!session_start()){
       });
         </script>
         
-        <div class='edit-log-form container text-center'  style="width: 50%;">
+        <div class='edit-log-form container text-center'  style="width: 50%; margin-top: 100px;">
         <h1>Edit entry</h1>
 
         <?php if($error){ ?>
