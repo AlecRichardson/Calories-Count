@@ -50,6 +50,9 @@ function evaluatePath(path) {
     case "edit-meal":
       $.get("./Components/CalorieLog/editLogForm.php", stageContent);
       break;
+    case "profile":
+      $.get("./Components/Profile/Profile.php", stageContent);
+      break;
     default:
       $.get("./Components/Landing/Landing.php", stageContent);
   }

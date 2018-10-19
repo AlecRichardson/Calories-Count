@@ -1,0 +1,13 @@
+#goals-container {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center;
+  align-items: center; */
+  border: 1px;
+  background-color: rgb(54, 133, 235);
+  border-radius: 25px;
+  height: 400px;
+}
+#page-title {
+  margin-top: 30px;
+}

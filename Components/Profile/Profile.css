@@ -1,0 +1,38 @@
+#profile-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#column-1 {
+  margin-top: 80px;
+  width: 45%;
+  display: block;
+  border: 1px;
+  background-color: rgb(54, 133, 235);
+  border-radius: 25px;
+  height: 500px;
+}
+#column-2 {
+  width: 45%;
+}
+#name {
+  color: white;
+  text-align: center;
+}
+#header {
+  padding-bottom: 20px;
+}
+#user-list {
+  text-align: left;
+  padding-right: 30px;
+}
+#user-info-list {
+  list-style: none;
+  color: white;
+  font-size: 18px;
+  padding: 10px;
+}
+#list-item {
+  padding: 20px;
+  margin: 20px;
+}

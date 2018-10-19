@@ -10,6 +10,11 @@
             }
         });
       });
+
+      $("#register-back-button").click(function() {
+            history.pushState(null, null, "dashboard");
+            evaluatePath("dashboard");
+      });
 </script>
 <div class='register-form container text-center' style="width: 50%; margin-top: 100px;">
           
@@ -70,6 +75,7 @@
                     <div id='error' style='margin:15px; color: red;'></div>
                     
                     <button type="button" class="btn btn-success" id='register-button'>Register</button>
+                    <button type="button" class="btn btn-danger" id='register-back-button'>Back</button>
                 </form>
         </div>
  
