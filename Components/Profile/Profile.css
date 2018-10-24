@@ -1,22 +1,32 @@
 #profile-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-#column-1 {
   margin-top: 80px;
-  width: 45%;
-  display: block;
+  width: 100%;
   border: 1px;
   background-color: rgb(54, 133, 235);
   border-radius: 25px;
-  height: 500px;
+  height: auto;
 }
-#column-2 {
-  width: 45%;
+
+#columns {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 25px;
+  background-color: rgb(44, 43, 43);
+  border-radius: 25px;
+  color: white;
+}
+#column-a {
+  width: 50%;
+}
+#column-b {
+  width: 50%;
 }
 #name {
-  color: white;
+  text-align: center;
+  margin: 25px 0;
+}
+#avatar {
+  width: 100%;
   text-align: center;
 }
 #header {
@@ -28,11 +38,25 @@
 }
 #user-info-list {
   list-style: none;
-  color: white;
   font-size: 18px;
-  padding: 10px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
-#list-item {
-  padding: 20px;
-  margin: 20px;
+
+.list-item {
+  width: 44%;
+  margin: 10px;
 }
+#profile-back-button {
+  width: 100px;
+  margin: 25px;
+  text-align: center;
+}
+
+/* @media only screen and (max-width: 991px) {
+  #profile-container {
+      height: 800px;
+  }
+} */

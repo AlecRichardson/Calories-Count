@@ -53,6 +53,9 @@ function evaluatePath(path) {
     case "profile":
       $.get("./Components/Profile/Profile.php", stageContent);
       break;
+    case "update-goals":
+      $.get("./Components/Profile/GoalsForm.php", stageContent);
+      break;
     default:
       $.get("./Components/Landing/Landing.php", stageContent);
   }

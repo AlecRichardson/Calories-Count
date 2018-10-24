@@ -35,6 +35,14 @@ $(".edit-meal-button").click(function() {
             history.pushState(null, null, "profile");
             evaluatePath("profile");
       });
+      
+      $(function(){
+          var total = $('#total').html();
+          var goal = $('#goal').html();
+          var remaining = goal - total;
+          $('#remaining').html(remaining); 
+      })
+    
 
 </script>
 
@@ -106,11 +114,18 @@ $(".edit-meal-button").click(function() {
                 
                 <div id="goals-container" class='container'>
                     <h1 id="page-title">
-                        Calorie diary for <?php echo $loggedin; ?>
+                        <?php echo $loggedin; ?>'s diary
                     </h1>
                     <i class="fa fa-user fa-5x" aria-hidden="true"></i>
                     
-                <?php 
+                <?php
+                $goal = 0;
+                $query = "select * from goals where userId='$id' limit 1";
+
+                if($result = $mysqli->query($query)){
+                    while($row = $result->fetch_assoc()){ 
+                        $goal = $row['calorieGoal'];
+                    }}
                 $query = "select users.firstName, users.lastName, calorielog.date, calorielog.breakfast, calorielog.lunch, calorielog.dinner, calorielog.other from users inner join calorielog on users.id = calorielog.userId where calorielog.date = date(now()) AND users.id='$id'";
                 }
                 if($result = $mysqli->query($query)){
@@ -119,13 +134,13 @@ $(".edit-meal-button").click(function() {
                     $total += $row['breakfast'] + $row['lunch'] + $row['dinner'] + $row['other'];
                     }
                 ?>
-
-                <div style="margin: 25px; font-size: 18px;">
-                    <p>
-                        A total of <?php echo $total; ?> calories.
-                        <p id="goal">0</p>
-                </p>
-                    </div>
+                
+                <div id='counter' class='container'>
+                    <h3 class='column'>Goal</h3><h3 class='column'>Total</h3><h3 class='column' style='text-align: right;'>Remaining</h3>
+                        <span id="goal" class='column'><?php echo $goal;?></span>-
+                        <span id='total'  class='column'> <?php echo $total; ?></span>=
+                        <span id='remaining' class='column'></span>
+                </div>
                   <?php 
                 }
                 $mysqli->close();
