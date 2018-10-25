@@ -12,18 +12,6 @@ $id = empty($_SESSION['id']) ? '99' : $_SESSION['id'];
 '>
 
 <script>
-    $("#profile-button").click(function() {
-    $('#error').html('');
-        $.post("./api/createUser.php", $("#profile-form").serialize(), function(data) {
-            if(data === 'success'){
-            history.pushState(null, null, "login");
-            evaluatePath("login");
-            } else{
-                $('#error').html(data);
-            }
-        });
-      });
-
       $("#profile-back-button").click(function() {
             history.pushState(null, null, "dashboard");
             evaluatePath("dashboard");
@@ -83,35 +71,40 @@ $id = empty($_SESSION['id']) ? '99' : $_SESSION['id'];
                     </ul>
                 </div>
             </div>    
-                <?php }}
+            <!--  -->
+                
+            
+        <div id="column-b">
+            <h3 id='name'>Goals</h3>
+            <div id='user-info'>
+            <ul id='user-info-list' class='container' >
+            <?php }}
                 
                 $query = "select * from goals where userId='$id' limit 1";
 
                 if($result = $mysqli->query($query)){
                     while($row = $result->fetch_assoc()){
                 ?>
-            
-        <div id="column-b">
-            <h3 id='name'>Goals</h3>
-            <div id='user-info'>
-                    <ul id='user-info-list' class='container' >
-                        <li class='list-item'><h5>Current weight </h5> <?php echo $row['currentWeight'];?></li>
+                    
+                        <li class='list-item'><h5>Current weight </h5> <?php echo empty($row['currentWeight']) ? 'N/A' : $row['currentWeight'];?></li>
                         
-                        <li class='list-item'><h5>Goal weight </h5><?php echo $row['goalWeight'];?></li>
+                        <li class='list-item'><h5>Goal weight </h5><?php echo  empty($row['goalWeight']) ? 'N/A' :$row['goalWeight'];?></li>
                         
-                        <li class='list-item'><h5>Calorie goal </h5><?php echo $row['calorieGoal'];?></li>
+                        <li class='list-item'><h5>Calorie goal </h5><?php echo empty($row['calorieGoal']) ? 'N/A' : $row['calorieGoal'];?></li>
                         
-                        <li class='list-item'><h5>Activity level </h5><?php echo $row['activityLevel'];?></li>
+                        <li class='list-item'><h5>Activity level </h5><?php echo empty($row['activityLevel']) ? 'N/A' : $row['activityLevel'];?></li>
                         
-                        <li class='list-item'><h5>Workouts per week </h5><?php echo $row['workouts'];?></li>
+                        <li class='list-item'><h5>Workouts per week </h5><?php echo empty($row['workouts']) ? 'N/A' : $row['workouts'];?></li>
 
+                <?php }} $mysqli->close(); ?>
+                
                         <li class="list-item"><button type="button" class="btn btn-warning" id='update-goals-button'>Update goals</button></li>
-                           
                     </ul>
             </div>
         </div> 
 
-                    <?php }} $mysqli->close(); ?>
+                    
+                    <!--  -->
     </div>
     <button type="button" class="btn btn-danger" id='profile-back-button'>Back</button>
 </div>

@@ -30,6 +30,7 @@ $loggedin = empty($_SESSION['loggedin']) ? '' : $_SESSION['loggedin'];
         </nav>
         <div id='content' class='async'></div>
 
+
         <!-- <div id='footer' class='async'>
             
         </div> -->

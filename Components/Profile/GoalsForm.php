@@ -18,7 +18,13 @@ require_once "../../config/db.conf";
 
     if($result = $mysqli->query($query)){
         while($row = $result->fetch_assoc()){
-        
+            $currentWeight = $row['currentWeight'];
+            $goalWeight = $row['goalWeight'];
+            $calorieGoal = $row['calorieGoal'];
+            $activityLevel = $row['activityLevel'];
+            $workouts = $row['workouts'];
+        }
+    }
 ?>
 
 <script>
@@ -51,21 +57,21 @@ require_once "../../config/db.conf";
                         <div class="input-group-prepend">
                             <span class="input-group-text">Current weight</span>
                         </div>
-                        <input type="text" class="form-control" name='currentWeight' placeholder="Current weight" value='<?php echo $row['currentWeight'];?>'>
+                        <input type="text" class="form-control" name='currentWeight' placeholder="Current weight" value='<?php echo $currentWeight; ?>'>
                     </div>
 
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text">Goal weight</span>
                         </div>
-                        <input type="text" class="form-control" placeholder="Goal weight" name='goalWeight' value='<?php echo $row['goalWeight'];?>'>
+                        <input type="text" class="form-control" placeholder="Goal weight" name='goalWeight' value='<?php echo $goalWeight; ?>'>
                     </div>
 
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text">Calorie goal</span>
                         </div>
-                        <input type="text" class="form-control" placeholder="Calorie goal" name='calorieGoal' value='<?php echo $row['calorieGoal'];?>'>
+                        <input type="text" class="form-control" placeholder="Calorie goal" name='calorieGoal' value='<?php echo $calorieGoal; ?>'>
                     </div>
 
                     <div class="input-group mb-3">
@@ -73,7 +79,7 @@ require_once "../../config/db.conf";
                             <span class="input-group-text">Activity level</span>
                         </div>
                         <select class="form-control" name='activityLevel'>
-                            <option value='<?php echo $row['activityLevel']; ?>' selected data-default><?php echo $row['activityLevel']; ?></option>
+                            <option value='<?php echo $activityLevel; ?>' selected data-default><?php echo $activityLevel; ?></option>
                             <option value='Not very active'>Not very active</option>
                             <option value='Lightly active'>Lightly active</option>
                             <option value='Active'>Active</option>
@@ -86,7 +92,7 @@ require_once "../../config/db.conf";
                             <span class="input-group-text">Workouts per week</span>
                         </div>
                         <select class="form-control" name='workouts'>
-                        <option value='<?php echo $row['workouts']; ?>' selected data-default><?php echo $row['workouts'];; ?></option>
+                        <option value='<?php echo $workouts; ?>' selected data-default><?php echo $workouts; ?></option>
                             <option value='0'>0</option>
                             <option value='1'>1</option>
                             <option value='2'>2</option>
@@ -104,6 +110,6 @@ require_once "../../config/db.conf";
                     <button type="button" class="btn btn-danger" id='goals-back-button'>Back</button>
                 </form>
         </div>
-    <?php }} ?>
+   
  
          

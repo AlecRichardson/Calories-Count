@@ -27,6 +27,10 @@ function handle_log(){
     $activityLevel = empty($_POST['activityLevel']) ? 'Not Very Active' : $_POST['activityLevel'];
     $workouts = empty($_POST['workouts']) ? '0' : $_POST['workouts'];
    
+    if(!$currentWeight || !$goalWeight || !$calorieGoal || !$activityLevel || !$workouts){
+        echo 'All fields are required.';
+        exit;
+    }
     
 
    require_once "../config/db.conf";
