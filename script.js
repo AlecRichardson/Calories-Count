@@ -28,6 +28,15 @@ function evaluatePath(path) {
   var request = path.split("/").pop();
 
   switch (request) {
+    case "workouts":
+      $.get("./Components/Workouts/Workouts.php", stageContent);
+      break;
+    case "upper-body":
+      $.get("./Components/Workouts/UpperBody.php", stageContent);
+      break;
+    case "lower-body":
+      $.get("./Components/Workouts/LowerBody.php", stageContent);
+      break;
     case "login":
       $.get("./Components/Auth/loginForm.php", stageContent);
       break;

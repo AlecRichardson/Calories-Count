@@ -25,6 +25,22 @@ $loggedin = empty($_SESSION['loggedin']) ? '' : $_SESSION['loggedin'];
             </li>
             <li class="nav-item">
               <a
+                class='nav-link  async-link'
+                href='./workouts'
+              >
+                Workouts
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class='nav-link  async-link'
+                href='./nutrition'
+              >
+                Nutrition
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
               id='dashboard'
               class='nav-link async-link'
               href='./dashboard'

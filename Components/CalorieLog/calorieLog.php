@@ -116,8 +116,9 @@ $(".edit-meal-button").click(function() {
                     <h1 id="page-title">
                         <?php echo $loggedin; ?>'s diary
                     </h1>
-                    <i class="fa fa-user fa-5x" aria-hidden="true"></i>
                     
+                    <i class="fa fa-user fa-5x" aria-hidden="true"></i>
+                   
                 <?php
                 $goal = 0;
                 $query = "select * from goals where userId='$id' limit 1";
@@ -148,7 +149,7 @@ $(".edit-meal-button").click(function() {
             
               
             ?>
-            <button type="button" class="btn btn-primary" id='profile-button'>My profile</button>
+            <button type="button" class="btn btn-warning" id='profile-button'>My profile</button>
                 </div>   
 
                 <div style='margin: 20px;'>
