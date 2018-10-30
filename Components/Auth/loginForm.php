@@ -12,6 +12,7 @@ $loggedin = empty($_SESSION['loggedin']) ? '' : $_SESSION['loggedin'];
             if(data === 'success'){
             history.pushState(null, null, "dashboard");
             evaluatePath("dashboard");
+            changeActive('dashboard');
             } else{
                 $('#error').html(data);
             }

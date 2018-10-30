@@ -24,6 +24,14 @@ function stageContent(content) {
   $("#content").html(content);
 }
 
+function changeActive(data) {
+  var navItem = "#" + data;
+  $(".async")
+    .find("a.active")
+    .removeClass("active");
+  $(navItem).addClass("active");
+}
+
 function evaluatePath(path) {
   var request = path.split("/").pop();
 
