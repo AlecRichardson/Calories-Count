@@ -30,9 +30,7 @@ require_once "../../config/db.conf";
 <script>
     $("#goals-button").click(function() {
     $('#error').html('');
-    console.log('data',  $("#goals-form").serialize());
         $.post("./api/editGoals.php", $("#goals-form").serialize(), function(data) {
-            console.log(data);
             if(data === 'success'){
             history.pushState(null, null, "profile");
             evaluatePath("profile");
