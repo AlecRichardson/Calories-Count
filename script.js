@@ -58,6 +58,7 @@ function evaluatePath(path) {
         } else {
           history.pushState(null, null, "login");
           evaluatePath("login");
+          changeActive("login");
         }
       });
       break;

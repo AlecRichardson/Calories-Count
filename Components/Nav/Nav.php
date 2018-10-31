@@ -11,7 +11,7 @@ $loggedin = empty($_SESSION['loggedin']) ? '' : $_SESSION['loggedin'];
 
 
 <div class="navbar navbar-dark bg-dark">
-          <a class="navbar-brand" href="/home">
+          <a class="navbar-brand" href="/">
             <h1>Calories Count</h1>
           </a>
           <ul class="nav nav-pills">
@@ -50,6 +50,7 @@ $loggedin = empty($_SESSION['loggedin']) ? '' : $_SESSION['loggedin'];
             </li>
             <li class="nav-item">
               <a
+              id='login'
                 class='nav-link async-link' href='./login'
               >
                 Login

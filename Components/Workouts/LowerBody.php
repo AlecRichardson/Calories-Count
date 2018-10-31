@@ -5,11 +5,16 @@ if(!session_start()){
 }
 
 ?>
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-<link href='./Components/Workouts/Workouts.css' rel='stylesheet' type='text/css
-'>
-
+        <script
+         src="https://code.jquery.com/jquery-3.3.1.min.js"
+         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+         crossorigin="anonymous"></script>
 </head>
+<link href='./Components/Workouts/Workouts.css' rel='stylesheet' type='text/css'>
+
 <div class='container background'>
 	<div class="header">
 		<h1>Lower Body Workouts</h1>
@@ -18,32 +23,7 @@ if(!session_start()){
 	<div class="workouts-container">
 		<div class="column-sm">
 			<button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#myModal">Quads</button>
-
-			<img class='workout-image' src="./images/workouts/Quads.jpg" alt="Chest">
-		</div>
-
-		<div class="column-sm">
-			<button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#myModal">Hamstrings</button>
-			<img class='workout-image' src="./images/workouts/Hamstrings.jpg" alt="Chest">
-		</div>
-
-		<div class="column-sm">
-			<button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#myModal">Calves</button>
-			<img class='workout-image' src="./images/workouts/Calves.jpg" alt="Chest">
-		</div>
-
-		<div class="column-sm">
-			<button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#myModal">Glutes</button>
-			<img class='workout-image' src="./images/workouts/Glutes.jpg" alt="Chest">
-		</div>
-	</div>
-</div>
-
-
-
-</div>
-
-<div class="modal fade" id="myModal" role="dialog">
+			<div class="modal fade" id="myModal" role="dialog">
 	<div class="modal-dialog">
 		<!-- Modal content-->
 		<div class="modal-content text-center">
@@ -110,3 +90,28 @@ if(!session_start()){
 		</div>
 	</div>
 </div>
+			<img class='workout-image' src="./images/workouts/Quads.jpg" alt="Chest">
+		</div>
+
+		<div class="column-sm">
+			<button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#myModal">Hamstrings</button>
+			<img class='workout-image' src="./images/workouts/Hamstrings.jpg" alt="Chest">
+		</div>
+
+		<div class="column-sm">
+			<button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#myModal">Calves</button>
+			<img class='workout-image' src="./images/workouts/Calves.jpg" alt="Chest">
+		</div>
+
+		<div class="column-sm">
+			<button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#myModal">Glutes</button>
+			<img class='workout-image' src="./images/workouts/Glutes.jpg" alt="Chest">
+		</div>
+	</div>
+</div>
+
+
+
+
+
+

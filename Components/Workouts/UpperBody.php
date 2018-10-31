@@ -5,9 +5,17 @@ if(!session_start()){
 }
 
 ?>
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-<link href='./Components/Workouts/Workouts.css' rel='stylesheet' type='text/css
-'>
+        <script
+         src="https://code.jquery.com/jquery-3.3.1.min.js"
+         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+         crossorigin="anonymous"></script>
+</head>
+
+<link href='./Components/Workouts/Workouts.css' rel='stylesheet' type='text/css'>
+
 <div class="container background">
 <div class="header">
 		<h1>Upper Body Exercises</h1>
@@ -134,4 +142,3 @@ if(!session_start()){
 	
 </div>
 
-</div>
