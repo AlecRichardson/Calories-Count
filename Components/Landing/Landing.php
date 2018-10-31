@@ -18,10 +18,10 @@
             evaluatePath("workouts");
             changeActive('workouts');
       });
-      $("#diet").click(function() {
-            history.pushState(null, null, "diet");
-            evaluatePath("diet");
-            changeActive('diet');
+      $("#nutrition").click(function() {
+            history.pushState(null, null, "nutrition");
+            evaluatePath("nutrition");
+            changeActive('nutrition');
       });
 </script>
 
@@ -47,7 +47,7 @@
     <div id='diet-desc' class='col'>
         <h2>Explore Nutrition</h2>
         <p class='landing-desc'>Different goals require different diets. Search for the perfect diet plan that fits your needs.</p>
-        <button type="button" id='diet' class="btn btn-warning landing-button">Diets</button>
+        <button type="button" id='nutrition' class="btn btn-warning landing-button">Diets</button>
         <hr style=' width: 75%;'/>
     </div>
 </div>

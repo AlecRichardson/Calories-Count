@@ -17,6 +17,7 @@ $loggedin = empty($_SESSION['loggedin']) ? '' : $_SESSION['loggedin'];
           <ul class="nav nav-pills">
             <li class="nav-item">
               <a
+                id='home'
                 class='nav-link active async-link'
                 href='./'
               >
@@ -25,6 +26,7 @@ $loggedin = empty($_SESSION['loggedin']) ? '' : $_SESSION['loggedin'];
             </li>
             <li class="nav-item">
               <a
+                id='workouts'
                 class='nav-link  async-link'
                 href='./workouts'
               >
@@ -33,6 +35,7 @@ $loggedin = empty($_SESSION['loggedin']) ? '' : $_SESSION['loggedin'];
             </li>
             <li class="nav-item">
               <a
+                id='nutrition'
                 class='nav-link  async-link'
                 href='./nutrition'
               >
