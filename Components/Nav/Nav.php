@@ -11,7 +11,7 @@ $loggedin = empty($_SESSION['loggedin']) ? '' : $_SESSION['loggedin'];
 
 
 <div class="navbar navbar-dark bg-dark">
-          <a class="navbar-brand" href="/">
+          <a class="navbar-brand" href="./">
             <h1>Calories Count</h1>
           </a>
           <ul class="nav nav-pills">
