@@ -6,12 +6,10 @@ if(!session_start()){
 
 ?>
 <head>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-        <script
-         src="https://code.jquery.com/jquery-3.3.1.min.js"
-         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-         crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </head>
 
 <link href='./Components/Workouts/Workouts.css' rel='stylesheet' type='text/css'>
@@ -25,6 +23,7 @@ if(!session_start()){
 	<div class="column-sm">
 		<div>
 			<button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#myModal">Chest</button>
+			<img class='workout-image' src="./images/workouts/Chest.jpg" alt="Chest">
 		</div>
 		<div class="modal fade" id="myModal" role="dialog">
 			<div class="modal-dialog">
@@ -33,68 +32,67 @@ if(!session_start()){
 					<div class="modal-header text-center">
 						<h4 class="modal-title">Chest Exercises</h4>
 					</div>
-					<div class="modal-body">
-					</div>
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h4 class="panel-title">
-								<button class="accordion-toggle collapsed btn btn-warning btn-lg" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Bench
-									Press</button>
-							</h4>
-						</div>
+				<div class="modal-body">
+				<div id="accordion">
+					<div class="card">
+					  <div class="card-header">
+						<h4 class="card-title">
+							<button class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Bench Press</button>
+						</h4>
+					  </div>
 
-						<div id="collapseOne" class="panel-collapse collapse">
-							<div class="panel-body">
+						<div id="collapseOne" class="collapse" data-parent="#accordion">
+							<div class="card-body">
 								<div>
-									<img class='workout-image' src="./images/workouts/Bench%20Press.png">
+									<img class ='workout-image' src="./images/workouts/Bench%20Press.png">
 								</div>
-								<p>Slowly lower the bar to your chest then press upwards till arms are fully extended.</p>
+									<p>Slowly lower the bar to your chest then press upwards till arms are fully extended.</p>
 							</div>
 						</div>
 					</div>
-					<!-- second accordion element -->
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h4 class="panel-title">
-								<button class="accordion-toggle collapsed btn btn-warning btn-lg" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Cable
-									Fly</button>
-							</h4>
-						</div>
+				   <!-- second accordion element -->
+				  <div class="card">
+					  <div class="card-header">
+						<h4 class="card-title">
+							<button class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Cable Fly</button>
+						</h4>
+					  </div>
 
-						<div id="collapseTwo" class="panel-collapse collapse">
-							<div class="panel-body">
+						<div id="collapseTwo" class="collapse" data-parent="#accordion">
+							<div class="card-body">
 								<div>
-									<img class='workout-image' src="./images/workouts/CableFly.jpg">
+									<img class ='workout-image' src="./images/workouts/CableFly.jpg">
 								</div>
-								<p>With arms extended, pull cables in front of your chest till your hands touch.</p>
+									<p>With arms extended, pull cables in front of your chest till your hands touch.</p>
 							</div>
 						</div>
 					</div>
+				  <!-- third accordion element -->
+				  <div class="card">
+					  <div class="card-header">
+						<h4 class="card-title">
+							<button class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Seated Chest Press</button>
+						</h4>
+					  </div>
 
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h4 class="panel-title">
-								<button class="accordion-toggle collapsed btn btn-warning btn-lg" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Seated
-									Chest Press</button>
-							</h4>
-						</div>
-
-						<div id="collapseThree" class="panel-collapse collapse">
-							<div class="panel-body">
+						<div id="collapseThree" class="collapse" data-parent="#accordion">
+							<div class="card-body">
 								<div>
-									<img class='workout-image' src="./images/workouts/SeatedChestPress.jpg">
+									<img class ='workout-image' src="./images/workouts/SeatedChestPress.jpg">
 								</div>
-								<p>Sit firmly against the seat with feet flat on floor and keep head and neck still as you do the movement.</p>
+									<p>Sit firmly against the seat with feet flat on floor and keep head and neck still as you do the movement.</p>
 							</div>
 						</div>
 					</div>
+				</div><!-- end of the accordion -->
 					<div class="modal-footer">
 						<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 					</div>
 				</div>
 			</div>
 		</div>
-		<img class='workout-image' src="./images/workouts/Chest.jpg" alt="Chest">
+		
+	</div>
 	</div>
 
 	<!-- back modal content-->

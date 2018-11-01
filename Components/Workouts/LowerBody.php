@@ -6,12 +6,10 @@ if(!session_start()){
 
 ?>
 <head>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-        <script
-         src="https://code.jquery.com/jquery-3.3.1.min.js"
-         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-         crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </head>
 <link href='./Components/Workouts/Workouts.css' rel='stylesheet' type='text/css'>
 
@@ -23,6 +21,7 @@ if(!session_start()){
 	<div class="workouts-container">
 		<div class="column-sm">
 			<button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#myModal">Quads</button>
+			<img class='workout-image' src="./images/workouts/Quads.jpg" alt="Chest">
 			<div class="modal fade" id="myModal" role="dialog">
 	<div class="modal-dialog">
 		<!-- Modal content-->
@@ -31,16 +30,16 @@ if(!session_start()){
 				<h4 class="modal-title">Quad Exercises</h4>
 			</div>
 			<div class="modal-body">
-			</div>
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h4 class="panel-title">
-						<button class="accordion-toggle collapsed btn btn-warning btn-lg" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Squats</button>
+			<div id="accordion">
+			<div class="card">
+				<div class="card-header">
+					<h4 class="card-title">
+						<button class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Squats</button>
 					</h4>
 				</div>
 
-				<div id="collapseOne" class="panel-collapse collapse">
-					<div class="panel-body">
+				<div id="collapseOne" class="collapse" data-parent="#accordion">
+					<div class="card-body">
 						<div>
 							<img class='workout-image' src="./images/workouts/squat-exercise.jpg">
 						</div>
@@ -49,16 +48,16 @@ if(!session_start()){
 				</div>
 			</div>
 			<!-- second accordion element -->
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h4 class="panel-title">
-						<button class="accordion-toggle collapsed btn btn-warning btn-lg" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Leg
+			<div class="card">
+				<div class="card-header">
+					<h4 class="card-title">
+						<button class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Leg
 							Press</button>
 					</h4>
 				</div>
 
-				<div id="collapseTwo" class="panel-collapse collapse">
-					<div class="panel-body">
+				<div id="collapseTwo" class="collapse" data-parent="#accordion">
+					<div class="card-body">
 						<div>
 							<img class='workout-image' src="./images/workouts/leg%20press.jpg">
 						</div>
@@ -66,16 +65,16 @@ if(!session_start()){
 					</div>
 				</div>
 			</div>
-
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h4 class="panel-title">
-						<button class="accordion-toggle collapsed btn btn-warning btn-lg" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Lunges</button>
+				 <!-- third accordion element -->
+			<div class="card">
+				<div class="card-header">
+					<h4 class="card-title">
+						<button class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Lunges</button>
 					</h4>
 				</div>
 
-				<div id="collapseThree" class="panel-collapse collapse">
-					<div class="panel-body">
+				<div id="collapseThree" class="collapse" data-parent="#accordion">
+					<div class="card-body">
 						<div>
 							<img class='workout-image' src="./images/workouts/lunges.jpg">
 						</div>
@@ -83,16 +82,18 @@ if(!session_start()){
 					</div>
 				</div>
 			</div>
-
+		</div><!-- end of the accordion -->
+				<!-- modal footer -->
 			<div class="modal-footer">
 				<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
 			</div>
-		</div>
-	</div>
+		</div><!-- end of modal-body-->
+	</div><!-- end of modal content-->
 </div>
-			<img class='workout-image' src="./images/workouts/Quads.jpg" alt="Chest">
+			
 		</div>
-
+		</div><!-- end of chest column -->
+	
 		<div class="column-sm">
 			<button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#myModal">Hamstrings</button>
 			<img class='workout-image' src="./images/workouts/Hamstrings.jpg" alt="Chest">
@@ -107,8 +108,8 @@ if(!session_start()){
 			<button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#myModal">Glutes</button>
 			<img class='workout-image' src="./images/workouts/Glutes.jpg" alt="Chest">
 		</div>
-	</div>
-</div>
+	</div><!-- end of workouts container -->
+</div><!-- end of background container -->
 
 
 
