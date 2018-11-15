@@ -24,11 +24,14 @@ empty($_SESSION['loggedin']) ? '' : $_SESSION['loggedin']; ?>
       Get involved with the community by sharing tips, progress, or asking
       questions here.
     </h3>
+    <div class='text-center'>
+      <button type="button" id="post-button" class="btn btn-warning">
+        Create Post 
+      </button>
+    </div>
   </div>
   <div id="forum-container">
-    <button type="button" id="post-button" class="btn btn-warning text-center">
-      Create Post
-    </button>
+    
     <?php
         if($_SESSION['error']){echo '<div>'.$_SESSION['error'].'</div>';}
         
@@ -39,22 +42,27 @@ empty($_SESSION['loggedin']) ? '' : $_SESSION['loggedin']; ?>
          if($mysqli->connect_error){
             die('Connect Error (' . $mysqli->connect_errno . ')' . $mysqli->connect_error);
         }
+        
 
-        $query = "select * from posts order by date, id desc";
+        $query = "select posts.*, count(likes.id) as likes from posts left join likes on likes.postId = posts.id group by posts.id order by date, posts.id desc";
             
         if($result = $mysqli->query($query)){
           while($row = $result->fetch_assoc()){ 
+
           ?>
       <div class="post">
         <h4><?php echo $row['title']; ?></h4>
           
-        <div>Posted by: <?php echo $row['user']; ?></div>
+        <div style='margin: 10px 0 ;'>Posted by: <?php echo $row['user']; ?></div>
 
           <button type="button" id='post-<?php echo $row['id']; ?>' class="btn btn-warning view-post-button"
           >
             View post
           </button>
-          <span class='date'>Posted on: <?php echo $row['date']; ?></span>
+          
+          <span class='date'>Posted on: <?php echo $row['date']; ?>
+          <br/>
+          <span>Likes: <?php echo $row['likes']; ?></span></span>
       </div>
           <?php }} ?>
   </div>

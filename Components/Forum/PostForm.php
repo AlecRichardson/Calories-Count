@@ -1,3 +1,13 @@
+<?php
+
+	if(!session_start()) {
+		header("Location: ../error.php");
+		exit;
+    }
+    $postId = empty($_SESSION['postId']) ? '99' : $_SESSION['postId'];
+    $postId = explode("-", $postId);
+    $loggedIn = empty($_SESSION['loggedin']) ? false : $_SESSION['loggedin'];
+?>
 <script>
     $("#post-button").click(function() {
 

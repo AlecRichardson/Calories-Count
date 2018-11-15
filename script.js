@@ -60,6 +60,9 @@ function evaluatePath(path) {
     case "post":
       $.get("./Components/Forum/Post.php", stageContent);
       break;
+    case "reply":
+      $.get("./Components/Forum/ReplyForm.php", stageContent);
+      break;
     case "dashboard":
       $.get("./api/authenticate.php", function(data) {
         if (data === "success") {

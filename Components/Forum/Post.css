@@ -12,7 +12,22 @@
   background-color: #007bff;
   color: white;
 }
-
+#post-content {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 25px;
+  padding: 25px;
+  margin: 15px 0;
+  color: black;
+}
+.reply {
+  padding: 20px;
+  margin: 10px 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(44, 43, 43);
+  color: white;
+}
 #post-buttons {
   margin: 25px;
   display: flex;
