@@ -21,14 +21,22 @@
       });
 
       $("#like-button").click(function() {
-          console.log('liked butto clicked');
         $.post("./api/likePost.php", function(data) {
-            console.log('like data', data);
             if(data === 'success'){
-               
                 var path = '<?php echo $_SESSION['postId']; ?>';
                 history.pushState(null, null, path);
                 evaluatePath("post");
+            }
+        });
+  });
+  $(".delete-button").click(function() {
+    var id = {id:$(this).attr('id')};
+    console.log('id', id);
+        $.post("./api/deletePost.php", id, function(data) {
+            console.log(data);
+            if(data === 'success'){
+                history.pushState(null, null, "forum");
+                evaluatePath("forum");
             }
         });
   });
@@ -52,7 +60,7 @@
           while($row = $result->fetch_assoc()){ 
           ?>
       <div id="post">
-        
+            <i class="fa fa-flag date" aria-hidden="true"></i>
             <h3 class='text-center'><?php echo $row['title']; ?></h3>
             <h5>Posted by: <?php echo $row['user']; ?></h5>
             <div id="post-content">
@@ -62,12 +70,23 @@
                 <span><i class="fa fa-thumbs-up"></i></span> Like
             </button>
             <span id='likes' style='margin-left: 10px;'><?php echo $row['likes']; ?></span>
+            <?php
+                if($loggedIn == $row['user']){
+                    echo '<div><button type="button" id='.$row['id'].' class="btn btn-danger delete-button">
+                    <span><i class="fa fa-trash"></i></span> Delete
+                </button></div>';
+                } 
+            ?> 
             <h5 class='date'>Posted on: <?php echo $row['date']; ?></h5>
         
       </div>
-      <div id='post-buttons'>    
-            <button type="button" class="btn btn-warning" id='reply-button' style='width: 100px;'>Reply</button>
-
+      <div id='post-buttons'> 
+      <?php
+                if(!empty($loggedIn)){
+                    echo '<button type="button" class="btn btn-warning" id="reply-button" style="width: 100px;">Reply</button>';
+                } 
+       ?>    
+            
             <button type="button" class="btn btn-danger" id='post-back-button' style='width: 100px;'>Back</button>     
         </div>
         

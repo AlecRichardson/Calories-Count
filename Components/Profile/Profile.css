@@ -5,7 +5,9 @@
   background-color: rgb(54, 133, 235);
   height: auto;
 }
-
+#name {
+  color: white;
+}
 #columns {
   display: flex;
   justify-content: space-evenly;

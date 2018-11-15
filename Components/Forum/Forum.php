@@ -1,5 +1,11 @@
-<?php if(!session_start()){ header("Location: error.php"); exit; } $loggedin =
-empty($_SESSION['loggedin']) ? '' : $_SESSION['loggedin']; ?>
+<?php 
+    if(!session_start())
+    { 
+      header("Location: error.php");
+      exit; 
+      } 
+      $loggedIn = empty($_SESSION['loggedin']) ? '' : $_SESSION['loggedin'];
+?>
 <script>
   $("#post-button").click(function() {
     history.pushState(null, null, "create-post");
@@ -25,9 +31,14 @@ empty($_SESSION['loggedin']) ? '' : $_SESSION['loggedin']; ?>
       questions here.
     </h3>
     <div class='text-center'>
-      <button type="button" id="post-button" class="btn btn-warning">
-        Create Post 
-      </button>
+    <?php
+                if(!empty($loggedIn)){
+                    echo '<button type="button" id="post-button" class="btn btn-warning">
+                    Create Post 
+                  </button>';
+                } 
+       ?> 
+      
     </div>
   </div>
   <div id="forum-container">
@@ -62,7 +73,7 @@ empty($_SESSION['loggedin']) ? '' : $_SESSION['loggedin']; ?>
           
           <span class='date'>Posted on: <?php echo $row['date']; ?>
           <br/>
-          <span>Likes: <?php echo $row['likes']; ?></span></span>
+          <span><i class="fa fa-thumbs-up"></i> <?php echo $row['likes']; ?></span></span>
       </div>
           <?php }} ?>
   </div>

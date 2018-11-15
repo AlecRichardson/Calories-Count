@@ -30,11 +30,25 @@
 }
 #post-buttons {
   margin: 25px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
 }
+#reply-button {
+  margin: 0 5px;
+}
+#post-back-button {
+  margin: 0 5px;
+}
+
 .date {
   position: relative;
   float: right;
+}
+.hide {
+  opacity: 0;
+}
+.delete-button {
+  margin: 10px 0;
+}
+.fa-flag {
+  color: red;
+  cursor: pointer;
 }
