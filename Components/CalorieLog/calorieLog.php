@@ -156,5 +156,4 @@ $(".edit-meal-button").click(function() {
                      <button type="button" class="btn btn-success" id='enter-meal-button'>Enter a meal</button>
                 </div>
                 </div>
-      
-   
+               

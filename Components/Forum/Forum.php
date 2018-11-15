@@ -78,3 +78,5 @@
           <?php }} ?>
   </div>
 </div>
+
+<?php include("../Footer/Footer.php") ?>

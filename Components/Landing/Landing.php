@@ -83,6 +83,7 @@
             <li><a href='#' class='menu-link'>Contact</a></li>
         </ul>
     </div>
+    </div>
 
 </div>
 
