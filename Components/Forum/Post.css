@@ -1,0 +1,25 @@
+#post-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#post {
+  padding: 20px;
+  margin-top: 100px;
+  height: 100%;
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+}
+
+#post-buttons {
+  margin: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.date {
+  position: relative;
+  float: right;
+}

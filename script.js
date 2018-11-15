@@ -51,6 +51,15 @@ function evaluatePath(path) {
     case "register":
       $.get("./Components/Auth/createUserForm.php", stageContent);
       break;
+    case "forum":
+      $.get("./Components/Forum/Forum.php", stageContent);
+      break;
+    case "create-post":
+      $.get("./Components/Forum/PostForm.php", stageContent);
+      break;
+    case "post":
+      $.get("./Components/Forum/Post.php", stageContent);
+      break;
     case "dashboard":
       $.get("./api/authenticate.php", function(data) {
         if (data === "success") {
