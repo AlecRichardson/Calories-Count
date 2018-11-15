@@ -21,7 +21,14 @@
 #description {
   margin: 50px 5%;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 33%;
+  text-align: center;
 }
 
 .landing-desc {
@@ -38,6 +45,8 @@
 }
 .landing-button {
   width: 100px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 /* Forum */

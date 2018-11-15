@@ -10,10 +10,17 @@ $loggedin = empty($_SESSION['loggedin']) ? '' : $_SESSION['loggedin'];
 '>
 
 
-<div class="navbar navbar-dark bg-dark">
-          <a class="navbar-brand" href="./">
+<div class="navbar navbar-dark bg-dark navbar-expand-lg">
+  
+        <a class="navbar-brand" href="./">
             <h1>Calories Count</h1>
           </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="nav-container"> 
+        <div class="collapse navbar-collapse" id="navbarToggler">
+          
           <ul class="nav nav-pills">
             <li class="nav-item">
               <a
@@ -69,4 +76,6 @@ $loggedin = empty($_SESSION['loggedin']) ? '' : $_SESSION['loggedin'];
               </a>
             </li>
           </ul>
+          </div> 
+        </div>
 </div>
