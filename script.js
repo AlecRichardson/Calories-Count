@@ -36,6 +36,9 @@ function evaluatePath(path) {
   var request = path.split("/").pop();
 
   switch (request) {
+    case "nutrition":
+      $.get("./Components/Nutrition/Nutrition.php", stageContent);
+      break;
     case "workouts":
       $.get("./Components/Workouts/Workouts.php", stageContent);
       break;

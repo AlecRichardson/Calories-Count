@@ -3,7 +3,6 @@ if(!session_start()){
     header("Location: ../Error/error.php");
     exit;
 }
-
 ?>
 <head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -139,4 +138,3 @@ if(!session_start()){
 
 	
 </div>
-
