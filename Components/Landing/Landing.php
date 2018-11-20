@@ -23,6 +23,11 @@
             evaluatePath("nutrition");
             changeActive('nutrition');
       });
+      $("#contact").click(function() {
+            history.pushState(null, null, "contact");
+            evaluatePath("contact");
+            changeActive('contact');
+      });
 </script>
 
 <div id='background-image'>
